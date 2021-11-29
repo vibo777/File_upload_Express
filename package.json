@@ -1,0 +1,25 @@
+{
+  "name": "file_upload_express",
+  "version": "1.0.0",
+  "description": "In this we are going to learn how to send file in express using Fomidible library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibo777/File_upload_Express.git"
+  },
+  "author": "Vaibhav Bunde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vibo777/File_upload_Express/issues"
+  },
+  "homepage": "https://github.com/vibo777/File_upload_Express#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^2.0.1",
+    "mongoose": "^6.0.13"
+  }
+}
