@@ -24,8 +24,4 @@ app.post("/create",(req,res)=>{
 
     })
 
-
-
 })
-
-
