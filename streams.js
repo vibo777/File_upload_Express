@@ -8,21 +8,37 @@ const app = express();
 let readStream = fs.createReadStream("./dummy.txt",{encoding:"utf-8"});
 let writeStream = fs.createWriteStream("./write_data.txt");
 
-readStream.on("data",(chunk)=>{
+// readStream.on("data",(chunk)=>{
 
-    console.log(chunk);
+//     console.log(chunk);
 
-    console.log("chunck arrived");
+//     writeStream.write(chunk);
 
-})
+// })
 
-app.get("/getdata",(req,res)=>{
+// now to connect readstream & write sterma we will use pipes
+// we simply connecting two streams here 
+// readStream.pipe(writeStream);
 
-    readStream.on("data",(chunk)=>{
+// endpoint : this endppint send data chunk by chunk 
+app.get("/getdata",async (req,res)=>{
+
+    let data = "";
+
+    await readStream.on("data",(chunk)=>{
         console.log("chunck Arrived");
-        res.send(chunck);
+        data+=chunk;   
     })
+
+    readStream.on("end",()=>{
+
+        res.send(data);
+
+    })
+    
 
 })
 
 app.listen(3000);
+
+
